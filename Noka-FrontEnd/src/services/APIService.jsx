@@ -83,7 +83,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-export function useAPIService(url, method, requestData) {
+export function APIService(url, method, requestData) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -99,6 +99,59 @@ export function useAPIService(url, method, requestData) {
       setData(null);
     }
   };
+
+  const sendData = async (url, requestData) => {
+    try {
+      const response = await axios.post(url, requestData);
+      const responseData = response.data;
+      setData(responseData);
+      setError(null);
+    } catch (error) {
+      console.error(error);
+      setError(error);
+      setData(null);
+    }
+  };
+
+  const updateData = async (url, requestData) => {
+    try {
+      const response = await axios.update(url, requestData);
+      const responseData = response.data;
+      setData(responseData);
+      setError(null);
+    } catch (error) {
+      console.error(error);
+      setError(error);
+      setData(null);
+    }
+  };
+
+  const deleteData = async (url, requestData) => {
+    try {
+      const response = await axios.delete(url, requestData);
+      const responseData = response.data;
+      setData(responseData);
+      setError(null);
+    } catch (error) {
+      console.error(error);
+      setError(error);
+      setData(null);
+    }
+  };
+
+  const patchData = async (url, requestData) => {
+    try {
+      const response = await axios.patch(url, requestData);
+      const responseData = response.data;
+      setData(responseData);
+      setError(null);
+    } catch (error) {
+      console.error(error);
+      setError(error);
+      setData(null);
+    }
+  };
+
 
   useEffect(() => {
     switch(method){
