@@ -152,7 +152,6 @@ export function APIService(url, method, requestData) {
     }
   };
 
-
   useEffect(() => {
     switch(method){
       case 'GET' :

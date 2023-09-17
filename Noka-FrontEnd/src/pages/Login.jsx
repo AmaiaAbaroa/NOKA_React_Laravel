@@ -6,7 +6,9 @@ const Login = () => {
 
   const FORM_ENDPOINT = "http://localhost:8000/api/login";
   const navigate = useNavigate();
-
+  const logIn = (data) => {
+    sessionStorage.setItem("UserID", data['UserID']);
+} 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -14,7 +16,8 @@ const Login = () => {
         axios.post(FORM_ENDPOINT,new FormData(event.target))
         .then(response=>{
             if(response.data){
-              navigate('/registro-exitoso');
+              logIn(response.data);
+              navigate('/login-exitoso');
             }
           })
 
