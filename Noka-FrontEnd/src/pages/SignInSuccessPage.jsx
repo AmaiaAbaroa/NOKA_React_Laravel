@@ -2,6 +2,7 @@
 // import computer from '../assets/img/online-resume.png';
 
 export default function SignInSuccessPage(){
+    console.log('Rendering RegistroExitoso');
     return(
         <>
             
