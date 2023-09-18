@@ -42,17 +42,17 @@ const RegistroUsuario = () => {
         if (error.response.data.errors.name) {
           setNameError(error.response.data.errors.name[0]);
         } else {
-          nameError("");
+          setNameError("");
         }
         if (error.response.data.errors.email) {
           setEmailError(error.response.data.errors.email[0]);
         } else {
-          emailError("");
+          setEmailError("");
         }
         if (error.response.data.errors.password) {
           setPasswordError(error.response.data.errors.password[0]);
         } else {
-          passwordError("");
+          setPasswordError("");
         }
       }
     }

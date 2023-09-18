@@ -74,3 +74,18 @@ input:focus{
     font-weight: 800;
     text-decoration: none;
 }
+
+.login_text_error{
+    width:80%;
+    max-width: 80%;
+    padding: 5% 2% 5% 2%;
+    margin: 5% 0;
+    border-radius: 15px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #ffffff;
+    border: 4px solid #C85A78;
+    color: #C85A78;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: center;
+}
