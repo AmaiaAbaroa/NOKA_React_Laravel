@@ -23,8 +23,8 @@ const LogoutButton = () => {
   return (
     <ButtonAtom
       label={"SAIOA ITXI"}
-      color={"blue"}
-      width={"big"}
+      color={"red"}
+      width={"medium"}
       type={"submit"}
       action={handleLogout}
     ></ButtonAtom>

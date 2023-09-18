@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { APIService } from "../../services/APIService";
 import ButtonAtom from '../../components/atoms/ButtonAtom/ButtonAtom';
-
+import NavbarAtom from '../../components/atoms/NabBarAtom/NavBarAtom';
 
 const RegistroUsuario = () => {
   const { setUser } = useAuth();
@@ -66,6 +66,7 @@ const RegistroUsuario = () => {
 
   return (
     <>
+      <NavbarAtom navbar_logo={true} logo_position={"no_login"} subnavbar_subtitle={true} />
       <section className='register_container'>
           <h1 id="register_welcome"> KAIXO! </h1>
           <h6 id="register_subtitle"> Izena eman <br></br> eta batu NOKAra</h6>
