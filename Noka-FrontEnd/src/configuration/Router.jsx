@@ -1,32 +1,35 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from '../context/AuthContext'; 
-import RegistroUsuario from "../pages/Register";
-import Login from "../pages/Login";
-import SignInSuccessPage from "../pages/SignInSuccessPage";
+import { AuthProvider } from "../context/AuthContext";
+import RegistroUsuario from "../pages/Register/Register";
+import Login from "../pages/Login/Login";
+import SignInSuccessPage from "../pages/SignInSucces/SignInSuccessPage";
 import Profile from "../pages/Profile";
 
-
-
-const Router= () => {
-    return(
-        <AuthProvider>
-            <BrowserRouter>
-                <Routes>
-                    <Route path='/login' element={<Login></Login>}></Route>
-                    <Route path='/profile' element={<Profile></Profile>}></Route>
-                    <Route path='/registro' element={<RegistroUsuario></RegistroUsuario>}></Route>
-                    <Route path='/registro-exitoso' element={<SignInSuccessPage></SignInSuccessPage>}></Route>
-                </Routes>
-            </BrowserRouter>
-        </AuthProvider>
-    );
+const Router = () => {
+  return (
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/profile" element={<Profile></Profile>}></Route>
+          <Route
+            path="/registro"
+            element={<RegistroUsuario></RegistroUsuario>}
+          ></Route>
+          <Route
+            path="/registro-exitoso"
+            element={<SignInSuccessPage></SignInSuccessPage>}
+          ></Route>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+  );
 };
 
 export default Router;
 
-
 // import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-// import { AuthProvider, useAuth } from '../context/AuthContext'; 
+// import { AuthProvider, useAuth } from '../context/AuthContext';
 // import PropTypes from 'prop-types';
 // import RegistroUsuario from "../pages/Register";
 // import Login from "../pages/Login";
@@ -38,7 +41,7 @@ export default Router;
 // // Componente de ruta protegida
 // function ProtectedRoute({ element }) {
 //   const { isAuthenticated } = useAuth();
-  
+
 //   if (!isAuthenticated) {
 //     return <Navigate to="/login" />;
 //   }
@@ -72,17 +75,8 @@ export default Router;
 
 // export default Router;
 
-
-
-
-
-
-
-
-
-
 // import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-// import { AuthProvider, useAuth } from '../context/AuthContext'; 
+// import { AuthProvider, useAuth } from '../context/AuthContext';
 // import PropTypes from 'prop-types';
 // import RegistroUsuario from "../pages/Register";
 // import Login from "../pages/Login";
@@ -94,7 +88,7 @@ export default Router;
 // // Componente de ruta protegida
 // function ProtectedRoute({ element}) {
 //   const { isAuthenticated } = useAuth();
-  
+
 //   if (!isAuthenticated) {
 //     return <Navigate to="/login" />;
 //   }
@@ -107,7 +101,7 @@ export default Router;
 //     <AuthProvider>
 //       <BrowserRouter>
 //         <Routes>
-//           <Route path="/login" element={<GuestLayout />}> 
+//           <Route path="/login" element={<GuestLayout />}>
 //                 <Route path="/" element={<Login />} />
 //                 <Route path="registro" element={<RegistroUsuario />} />
 //                 <Route path="registro-exitoso" element={<SignInSuccessPage />} />
@@ -127,9 +121,3 @@ export default Router;
 // };
 
 // export default Router;
-
-
-
-
-
-
