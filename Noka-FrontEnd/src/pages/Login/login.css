@@ -76,8 +76,8 @@ input:focus{
 }
 
 .login_text_error{
-    width:80%;
-    max-width: 80%;
+    width:100%;
+    max-width: 100%;
     padding: 5% 2% 5% 2%;
     margin: 5% 0;
     border-radius: 15px;
