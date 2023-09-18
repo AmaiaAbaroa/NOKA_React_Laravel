@@ -1,0 +1,90 @@
+.register_container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-width: fit-content;
+    max-width: 80%;
+    padding: 0 2% 0 2%;
+    margin: 20% auto;
+    border-radius: 15px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #93CBC2;
+    border: 2px solid #4D4D4D ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#register_welcome{
+    font-size: 2rem;
+    font-weight: 800;
+    color: #000000;
+    margin-top: 15%;
+}
+
+#register_subtitle{
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-style: italic;
+    color: #4D4D4D;
+    margin-top: unset;
+    text-align: center;
+}
+
+#register_form_container {
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;
+    max-width: 80%;
+    margin: auto;
+}
+
+#register_form_container input,
+textarea,
+select {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%; 
+    max-width: 100%;
+    background-color: #FFFF;
+    color: #000000;
+    border-radius: 12px;
+    /* outline: none; */
+    border: 2px solid #4D4D4D ;
+}
+
+#register_form_container input::placeholder{
+    color: #000000;
+    font-size: 14px;
+}
+input:focus{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #f7f2f0cf;
+}
+
+#register_text_account, #register_link_login {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #4D4D4D;
+    font-size: 11px;
+    margin: 5% 0 15% 0 ;
+    text-align: center;
+}
+
+#register_link_login {
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.register_text_error{
+    width:80%;
+    max-width: 80%;
+    padding: 0 2% 0 2%;
+    margin: 20% auto;
+    border-radius: 15px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #ffffff;
+    border: 2px solid #C85A78;
+    color: #000000;
+}
