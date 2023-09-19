@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
+import Landingpage from "../pages/Landingpage/Landingpage";
 import RegistroUsuario from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import SignInSuccessPage from "../pages/SignInSucces/SignInSuccessPage";
@@ -10,6 +11,7 @@ const Router = () => {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Landingpage></Landingpage>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/profile" element={<Profile></Profile>}></Route>
           <Route
