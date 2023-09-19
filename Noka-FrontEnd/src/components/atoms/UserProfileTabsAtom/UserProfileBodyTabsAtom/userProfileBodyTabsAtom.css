@@ -1,0 +1,12 @@
+.tabs_title_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tabs_title{
+    font-size: 20px;
+    color: #5C5A5A;
+    margin: 10% 0 10% 0;
+    text-decoration: underline;
+}

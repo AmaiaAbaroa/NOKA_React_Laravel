@@ -80,12 +80,20 @@ nav{
 }
 
 .social_menu_icon, .account_menu_icon {
-    width: 50px;
-    padding: 10% 5% ;
+    width: 40px;
+    padding: 5% 5% 0 ;
 }
 
+.account_menu_icon {
+    margin-left: 120px;
+    padding: 8% 8% 0 ;
+}
 .social_menu_icon img {
-    width: 100%;
+    width: 80%;
+}
+
+.account_menu_icon  img{
+    width: 80%;
 }
 
 .social_menu {
@@ -101,7 +109,7 @@ nav{
 
 .account_menu {
     width: 50%;
-    height: 40vh;
+    /* height: 40vh; */
     background-color: #5C5A5A;
     border: 2px solid #4D4D4D ;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -169,7 +177,7 @@ nav{
 }
 
 .logo_container img {
-    padding-top: 5%;
+    /* padding-top: 5%; */
     width: 50%;
     margin: 0 25%;
 }

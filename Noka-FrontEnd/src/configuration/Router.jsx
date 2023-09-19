@@ -3,7 +3,7 @@ import { AuthProvider } from "../context/AuthContext";
 import RegistroUsuario from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import SignInSuccessPage from "../pages/SignInSucces/SignInSuccessPage";
-import Profile from "../pages/Profile";
+import UserProfile from "../pages/UserProfile/UserProfile";
 
 const Router = () => {
   return (
@@ -11,7 +11,7 @@ const Router = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login></Login>}></Route>
-          <Route path="/profile" element={<Profile></Profile>}></Route>
+          <Route path="/profile" element={<UserProfile></UserProfile>}></Route>
           <Route
             path="/registro"
             element={<RegistroUsuario></RegistroUsuario>}
