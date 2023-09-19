@@ -18,7 +18,7 @@ export default function SignInSuccessPage() {
         subnavbar_subtitle={true}
       />
       <main id="success_container">
-        <h1 id="success_welcome">¡Zure eskaera bidalita izan da!</h1>
+        <h1 id="success_welcome">Zure eskaera bidali da!</h1>
         <div id="success_img_container">
           <img src={signInSuccess} alt="" />
         </div>

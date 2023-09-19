@@ -77,7 +77,7 @@ const Login = () => {
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Helbide elektronikoa"
                 required
               />
               {emailError && <p className="login_text_error">{emailError}</p>}
@@ -87,7 +87,7 @@ const Login = () => {
                 type="password"
                 id="password"
                 name="password"
-                placeholder="Contraseña"
+                placeholder="Pasahitza"
                 required
               />
               {passwordError && (

@@ -90,7 +90,7 @@ const RegistroUsuario = () => {
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Nombre"
+                placeholder="Izena"
                 required
               />
               {nameError && <p className="register_text_error"> {nameError}</p>}
@@ -100,7 +100,7 @@ const RegistroUsuario = () => {
                 type="email"
                 name="email"
                 id="email"
-                placeholder="name@company.com"
+                placeholder="Helbide elektronikoa"
                 required
               />
               {emailError && <p className="register_text_error">{emailError}</p>}
