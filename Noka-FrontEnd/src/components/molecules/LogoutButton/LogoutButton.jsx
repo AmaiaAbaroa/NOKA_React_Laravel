@@ -1,9 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import { APIService } from "../../../services/APIService";
 import ButtonAtom from "../../atoms/ButtonAtom/ButtonAtom";
 
 const LogoutButton = () => {
-  const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
@@ -13,8 +11,9 @@ const LogoutButton = () => {
       // Elimina los datos del usuario del localStorage
       localStorage.removeItem("user");
 
-      // Redirige a '/login'
-      navigate("/login");
+      // Recarga la página y redirige a '/login'
+        window.location.href ='/login'; 
+     
     } catch (error) {
       console.error("Error al cerrar sesión:", error);
     }
@@ -23,8 +22,8 @@ const LogoutButton = () => {
   return (
     <ButtonAtom
       label={"SAIOA ITXI"}
-      color={"blue"}
-      width={"big"}
+      color={"red"}
+      width={"medium"}
       type={"submit"}
       action={handleLogout}
     ></ButtonAtom>
