@@ -1,10 +1,10 @@
-import './login.css';
-import { useState } from 'react';
-import { useAuth } from '../../context/AuthContext';
-import { Link, useNavigate } from 'react-router-dom';
-import { APIService } from '../../services/APIService'; 
-import ButtonAtom from '../../components/atoms/ButtonAtom/ButtonAtom';
-import NavbarAtom from '../../components/atoms/NabBarAtom/NavBarAtom';
+import "./login.css";
+import { useState } from "react";
+import { useAuth } from "../../context/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
+import { APIService } from "../../services/APIService";
+import ButtonAtom from "../../components/atoms/ButtonAtom/ButtonAtom";
+import NavbarAtom from "../../components/atoms/NavbarAtom/NavBarAtom";
 
 const Login = () => {
   const { setUser, csrfToken } = useAuth();
@@ -23,13 +23,13 @@ const Login = () => {
     };
     await csrfToken();
     try {
-      const responseData = await APIService('/login', 'POST', body);
-      
+      const responseData = await APIService("/login", "POST", body);
+
       if (responseData.user) {
         setUser(responseData.user);
-        sessionStorage.setItem('UserID', responseData.user.id);
-        console.log('Redirigiendo a /profile');
-        navigate('/profile');
+        sessionStorage.setItem("UserID", responseData.user.id);
+        console.log("Redirigiendo a /profile");
+        navigate("/profile");
       }
       console.log(responseData);
     } catch (error) {
@@ -46,22 +46,30 @@ const Login = () => {
         if (error.response.data.errors.password) {
           setPasswordError(error.response.data.errors.password[0]);
         }
-        setError('Ocurrió un error al iniciar sesión. Por favor, inténtalo de nuevo más tarde.');
+        setError(
+          "Ocurrió un error al iniciar sesión. Por favor, inténtalo de nuevo más tarde."
+        );
       } else {
-        setError('Ocurrió un error al iniciar sesión. Por favor, inténtalo de nuevo más tarde.');
+        setError(
+          "Ocurrió un error al iniciar sesión. Por favor, inténtalo de nuevo más tarde."
+        );
       }
     }
   };
 
   return (
     <>
-      <NavbarAtom navbar_logo={true} logo_position={"no_login"} subnavbar_subtitle={true} />
-      <section className='login_container'>
+      <NavbarAtom
+        navbar_logo={true}
+        logo_position={"no_login"}
+        subnavbar_subtitle={true}
+      />
+      <section className="login_container">
         <h1 id="login_welcome">ONGI ETORRI</h1>
         <h5 id="login_subtitle">Elkarrekin gehiago gara</h5>
-        
-        <form onSubmit={handleSubmit} id='login_form_container'>
-        {error && <div className='login_text_error'>{error}</div>}
+
+        <form onSubmit={handleSubmit} id="login_form_container">
+          {error && <div className="login_text_error">{error}</div>}
           <div>
             <input
               type="email"
@@ -70,9 +78,7 @@ const Login = () => {
               placeholder="Email"
               required
             />
-            {emailError && (
-              <p className='login_text_error'>{emailError}</p>
-            )}
+            {emailError && <p className="login_text_error">{emailError}</p>}
           </div>
           <div>
             <input
@@ -83,13 +89,21 @@ const Login = () => {
               required
             />
             {passwordError && (
-              <p className='login_text_error'>{passwordError}</p>
+              <p className="login_text_error">{passwordError}</p>
             )}
           </div>
-          <ButtonAtom label={'SARTU'} color={'blue'} width={'small'} type={'submit'} ></ButtonAtom>
+          <ButtonAtom
+            label={"SARTU"}
+            color={"blue"}
+            width={"small"}
+            type={"submit"}
+          ></ButtonAtom>
 
-          <p id="login_text_account">Oraindik ez duzu konturik? 
-            <Link id="login_link_register" to="/registro">Eman izena hemen</Link>
+          <p id="login_text_account">
+            Oraindik ez duzu konturik?
+            <Link id="login_link_register" to="/registro">
+              Eman izena hemen
+            </Link>
           </p>
         </form>
       </section>

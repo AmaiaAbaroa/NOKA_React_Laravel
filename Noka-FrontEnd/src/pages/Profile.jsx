@@ -1,5 +1,5 @@
 import { useAuth } from "../context/AuthContext";
-import NavbarAtom from "../components/atoms/NabBarAtom/NavBarAtom";
+import NavbarAtom from "../components/atoms/NavbarAtom/NavBarAtom";
 
 export default function Profile() {
   const { user } = useAuth(); // Obtén la información del usuario del contexto
@@ -7,11 +7,11 @@ export default function Profile() {
 
   return (
     <>
-      <NavbarAtom name_greeting={`Kaixo, ${user ? user.name : 'lagun'}!`} subnavbar_subtitle={false} />
-      <div>
-
-      </div>
+      <NavbarAtom
+        name_greeting={`Kaixo, ${user ? user.name : "lagun"}!`}
+        subnavbar_subtitle={false}
+      />
+      <div></div>
     </>
   );
 }
-

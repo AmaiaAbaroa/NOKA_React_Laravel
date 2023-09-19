@@ -1,11 +1,11 @@
-import './register.css';
+import "./register.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { APIService } from "../../services/APIService";
-import ButtonAtom from '../../components/atoms/ButtonAtom/ButtonAtom';
-import NavbarAtom from '../../components/atoms/NabBarAtom/NavBarAtom';
+import ButtonAtom from "../../components/atoms/ButtonAtom/ButtonAtom";
+import NavbarAtom from "../../components/atoms/NavbarAtom/NavBarAtom";
 
 const RegistroUsuario = () => {
   const { setUser } = useAuth();
@@ -66,67 +66,81 @@ const RegistroUsuario = () => {
 
   return (
     <>
-      <NavbarAtom navbar_logo={true} logo_position={"no_login"} subnavbar_subtitle={true} />
-      <section className='register_container'>
-          <h1 id="register_welcome"> KAIXO! </h1>
-          <h6 id="register_subtitle"> Izena eman <br></br> eta batu NOKAra</h6>
-          <form action="#" method="post" onSubmit={handleSubmit} id='register_form_container'>
-            <div>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Nombre"
-                required
-              />
-              {nameError && (
-                <p className='register_text_error'> {nameError}</p>
-              )}
-            </div>
-            <div>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="name@company.com"
-                required
-              />
-              {emailError && (
-                <p className='register_text_error'>
-                  {emailError}
-                </p>
-              )}
-            </div>
-            <div>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="••••••••"
-                required
-              />
-              {passwordError && (
-                <p className='register_text_error'>
-                  {passwordError}
-                </p>
-              )}
-            </div>
-            <div>
-              <input
-                type="password"
-                name="cpassword"
-                id="cpassword"
-                placeholder="••••••••"
-                required
-              />
-            </div>
+      <NavbarAtom
+        navbar_logo={true}
+        logo_position={"no_login"}
+        subnavbar_subtitle={true}
+      />
+      <section className="register_container">
+        <h1 id="register_welcome"> KAIXO! </h1>
+        <h6 id="register_subtitle">
+          {" "}
+          Izena eman <br></br> eta batu NOKAra
+        </h6>
+        <form
+          action="#"
+          method="post"
+          onSubmit={handleSubmit}
+          id="register_form_container"
+        >
+          <div>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Nombre"
+              required
+            />
+            {nameError && <p className="register_text_error"> {nameError}</p>}
+          </div>
+          <div>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="name@company.com"
+              required
+            />
+            {emailError && <p className="register_text_error">{emailError}</p>}
+          </div>
+          <div>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="••••••••"
+              required
+            />
+            {passwordError && (
+              <p className="register_text_error">{passwordError}</p>
+            )}
+          </div>
+          <div>
+            <input
+              type="password"
+              name="cpassword"
+              id="cpassword"
+              placeholder="••••••••"
+              required
+            />
+          </div>
 
-            <ButtonAtom label={'BIDALI'} color={'blue'} width={'small'} type={'submit'} ></ButtonAtom>
+          <ButtonAtom
+            label={"BIDALI"}
+            color={"blue"}
+            width={"small"}
+            type={"submit"}
+          ></ButtonAtom>
 
-            <p id="register_text_account"> Badaukazu kontua?{" "}
-              <Link id="register_link_login" to="/login" > Sartu hemen </Link>
-            </p>
-          </form>
+          <p id="register_text_account">
+            {" "}
+            Badaukazu kontua?{" "}
+            <Link id="register_link_login" to="/login">
+              {" "}
+              Sartu hemen{" "}
+            </Link>
+          </p>
+        </form>
       </section>
     </>
   );

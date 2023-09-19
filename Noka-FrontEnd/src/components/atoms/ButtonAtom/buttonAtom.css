@@ -52,3 +52,9 @@
     border: 0.5px solid #C6738A ;
     font-size: 21px;
 }
+.yellow {
+    background-color: #FED686 ;
+    color: #4D4D4D;
+    border: 0.5px solid #4D4D4D;
+    font-size: 21px;
+}

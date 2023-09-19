@@ -9,6 +9,7 @@ import logoLight from '../../../assets/img/Logo_fondo_claro.png';
 import menuIcon from '../../../assets/icons/menu_icon.svg';
 import accountIcon from '../../../assets/icons/account_icon.svg'
 import LogoutButton from '../../molecules/LogoutButton/LogoutButton';
+import ButtonAtom from '../ButtonAtom/ButtonAtom';
 
 function NavbarAtom({name_greeting, subnavbar_subtitle, logo_position}) {
   
@@ -114,9 +115,14 @@ console.log(user);
                         <li id="account_menu_line_break">
                             <hr></hr>
                         </li>
-                    <Link className="link_decoration" to='/'>
+                    <Link className="link_decoration" to='/login'>
                         <li id="logout_button_container">
-                            <LogoutButton></LogoutButton>
+                            {user ? <LogoutButton></LogoutButton> : 
+                                    <Link to='/login'><ButtonAtom  
+                                    label={"SAIOA HASI"}
+                                    color={"yellow"}
+                                    width={"medium"}
+                                    ></ButtonAtom></Link>}
                         </li>
                     </Link>
                 </ul> 
