@@ -3,8 +3,8 @@ import { useAuth } from "../../context/AuthContext";
 import NavbarAtom from "../../components/atoms/NavbarAtom/NavBarAtom";
 import ProfileBannerAtom from "../../components/atoms/UserProfileTabsAtom/ProfileBannerAtom/ProfileBannerAtom";
 import ProfileTabsAtom from "../../components/atoms/UserProfileTabsAtom/ProfileTabsAtom/ProfileTabsAtom";
-import UserProfileBodyTab1 from '../../components/atoms/UserProfileTabsAtom/UserProfileBodyTabsAtom/UserProfileBodyTab1';
-
+import UserProfileBodyTab1 from "../../components/atoms/UserProfileTabsAtom/UserProfileBodyTabsAtom/UserProfileBodyTab1";
+import FooterAtom from '../../components/atoms/FooterAtom/FooterAtom';
 export default function UserProfile() {
   const { user } = useAuth(); // Obtén la información del usuario del contexto
   console.log(user);
@@ -23,6 +23,7 @@ export default function UserProfile() {
           // element_fase3={<UserProfileBodyTab3></UserProfileBodyTab3>}
         ></ProfileTabsAtom>
       </main>
+        <FooterAtom logo={false}></FooterAtom>
     </>
   );
 }
