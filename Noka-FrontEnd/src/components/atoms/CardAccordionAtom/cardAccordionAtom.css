@@ -3,8 +3,9 @@
   text-align: left;
 }
 
-article {
-  border: 1px solid #5C5A5A;
+.article_card {
+  background-color: #FFFFFF;
+  border: 2px solid #5C5A5A;
   padding: 1em;
   margin: 1em auto;
 }
@@ -16,6 +17,7 @@ article {
 
 .article_title{
     padding-left: 5%;
+    padding-right: 5%;
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 700;
     font-size: 17px;
@@ -33,6 +35,10 @@ article {
     display:flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.article_paddlock_img{
+  width: 7%;
 }
 
 input[type="radio"] {
