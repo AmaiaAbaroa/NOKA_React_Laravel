@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const ButtonAtom = ({ label, color , width,  typeButton, action}) => {
   return (
-    <button className={`button-atom ${color} ${width}`} type={typeButton} onClick={action} >
+    <button className={`button_atom ${color} ${width}`} type={typeButton} onClick={action} >
       {label} 
     </button>
   );

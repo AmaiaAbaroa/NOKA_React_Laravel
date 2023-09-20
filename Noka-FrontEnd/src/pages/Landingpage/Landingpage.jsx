@@ -1,10 +1,9 @@
 import './landingpage.css';
-import PropTypes from 'prop-types';
 import NavbarAtom from '../../components/atoms/NavbarAtom/NavBarAtom';
 import CarouselAtom from '../../components/atoms/CarouselAtom/CarouselAtom';
+import CardAccordionAtom from '../../components/atoms/CardAccordionAtom/CardAccordionAtom';
 
-
-const ButtonAtom = () => {
+const Landingpage= () => {
     return (
     <>
         <NavbarAtom
@@ -13,17 +12,13 @@ const ButtonAtom = () => {
             subnavbar_subtitle={true}
             />
         <CarouselAtom></CarouselAtom>
-    
+        <CardAccordionAtom></CardAccordionAtom>
     </>
     );
   };
   
-  ButtonAtom.propTypes = {
-    label: PropTypes.string.isRequired,
-
-  };
   
-  export default ButtonAtom;
+  export default Landingpage;
 
 
 
