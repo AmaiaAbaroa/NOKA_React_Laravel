@@ -2,6 +2,7 @@ import './landingpage.css';
 import NavbarAtom from '../../components/atoms/NavbarAtom/NavBarAtom';
 import CarouselAtom from '../../components/atoms/CarouselAtom/CarouselAtom';
 import CardAccordionAtom from '../../components/atoms/CardAccordionAtom/CardAccordionAtom';
+import FooterAtom from '../../components/atoms/FooterAtom/FooterAtom';
 
 const Landingpage= () => {
     return (
@@ -11,8 +12,11 @@ const Landingpage= () => {
             logo_position={"no_login"}
             subnavbar_subtitle={true}
             />
-        <CarouselAtom></CarouselAtom>
-        <CardAccordionAtom></CardAccordionAtom>
+        <main>
+            <CarouselAtom></CarouselAtom>
+            <CardAccordionAtom></CardAccordionAtom>
+        </main>
+        <FooterAtom logo={true}></FooterAtom>
     </>
     );
   };

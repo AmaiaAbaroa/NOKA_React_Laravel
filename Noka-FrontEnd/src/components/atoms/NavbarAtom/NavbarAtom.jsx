@@ -92,7 +92,7 @@ console.log(user);
                      </li>
                  </Link> 
                  <Link className="link_decoration" to='/'>
-                     <li id='social_menu_red'>
+                     <li>
                          KONTAKTATU
                      </li>
                  </Link>

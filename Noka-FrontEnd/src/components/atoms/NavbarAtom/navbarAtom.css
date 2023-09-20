@@ -157,6 +157,11 @@ nav{
     color: #ffff;
 }
 
+.social_menu li:hover{
+    font-size: 30px;
+    font-weight: 800;
+}
+
 #account_menu_line_break {
     padding-top: 10%;
     margin-bottom: -5% ;
@@ -166,12 +171,6 @@ nav{
     margin-top: -30%;
 }
 
-#social_menu_red{
-    color: #C6738A;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 800;
-    width: auto;
-}
 .social_menu li img, .account_menu li img {
     width: 100%;
 }
