@@ -1,0 +1,99 @@
+.button_landingpage_container{
+    display:flex;
+    border-radius: 15px;
+    background-color: #4D4D4D;
+    border: 1px solid #4D4D4D ;
+    width: 40%;
+    height: 15vh;
+    margin: 2% 0;
+}
+
+.button_landingpage_atom{
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    font-weight: 800;
+    margin: auto;
+    border-radius: 15px;
+    cursor: pointer; 
+    width: 110px;
+    height: 10vh;
+}
+
+.blue_land{
+    background-color: #86BFD1;
+    border: 2px solid #0F95BC ;
+    box-shadow: #0F95BC 0px 2px 2px;
+}
+.blue_land:active{
+    color: #ffffff;
+    text-shadow: 1px 1px rgba(0,0,0,.3); 
+	background:#0F95BC;  
+	box-shadow:inset 4px 4px 4px #0F95BC, inset -3px -3px 3px rgba(255,255,255,.2);
+}
+
+.green_land{
+    font-size: 13px;
+    background-color: #B4DAD3;
+    border: 1px solid #37DAC0;
+    box-shadow: #37DAC0 0px 2px 2px;
+}
+.green_land:active{
+    color: #ffffff;
+    text-shadow: 1px 1px rgba(0,0,0,.3); 
+	background:#37DAC0;  
+	box-shadow:inset 4px 4px 4px #37DAC0, inset -3px -3px 3px rgba(255,255,255,.2);
+}
+
+.red_land{
+    color:#000000;
+    background-color: #D9B0BB;
+    border: 1px solid #CE3B65;
+    box-shadow: #CE3B65 0px 2px 2px;
+}
+.red_land:active{
+    color: #ffffff;
+    text-shadow: 1px 1px rgba(0,0,0,.3); 
+	background:#CE3B65;  
+	box-shadow:inset 4px 4px 4px #CE3B65, inset -3px -3px 3px rgba(255,255,255,.2);
+}
+
+.yellow_land{
+    color:#000000;
+    font-size: 13px;
+    background-color: #F5E1B9;
+    border: 1px solid #F2B73F;
+    box-shadow: #F2B73F 0px 2px 2px;
+}
+.yellow_land:active{
+    color: #ffffff;
+    text-shadow: 1px 1px rgba(0,0,0,.3); 
+	background:#F2B73F;  
+	box-shadow:inset 4px 4px 4px #F2B73F, inset -3px -3px 3px rgba(255,255,255,.2);
+}
+
+.orange_land{
+    color:#000000;
+    background-color: #D5B79B;
+    border: 1px solid #D2833A;
+    box-shadow: #D2833A 0px 2px 2px;
+}
+.orange_land:active{
+    color: #ffffff;
+    text-shadow: 1px 1px rgba(0,0,0,.3); 
+	background:#D2833A;  
+	box-shadow:inset 4px 4px 4px #D2833A, inset -3px -3px 3px rgba(255,255,255,.2);
+}
+
+.purple_land{
+    background-color: #CAC0D7;
+    border: 1px solid #7F40D2;
+    box-shadow: #7F40D2 0px 2px 2px;
+}
+.purple_land:active{
+    color: #ffffff;
+    text-shadow: 1px 1px rgba(0,0,0,.3); 
+	background:#7F40D2;  
+	box-shadow:inset 4px 4px 4px #7F40D2, inset -3px -3px 3px rgba(255,255,255,.2);
+}
+
