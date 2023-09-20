@@ -80,7 +80,7 @@ nav{
 }
 
 .social_menu_icon, .account_menu_icon {
-    width: 40px;
+    width: 80px;
     padding: 5% 5% 0 ;
 }
 
@@ -89,11 +89,11 @@ nav{
     padding: 8% 8% 0 ;
 }
 .social_menu_icon img {
-    width: 80%;
+    width: 100%;
 }
 
 .account_menu_icon  img{
-    width: 80%;
+    width: 40px;
 }
 
 .social_menu {

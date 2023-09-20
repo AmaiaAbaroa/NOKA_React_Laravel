@@ -12,7 +12,7 @@ const LogoutButton = () => {
       localStorage.removeItem("user");
 
       // Recarga la página y redirige a '/login'
-        window.location.href ='/login'; 
+        window.location.href ='/'; 
      
     } catch (error) {
       console.error("Error al cerrar sesión:", error);
