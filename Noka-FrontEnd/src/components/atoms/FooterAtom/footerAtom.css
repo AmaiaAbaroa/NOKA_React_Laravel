@@ -1,0 +1,62 @@
+.footer_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position:static;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+    background-color: #5C5A5A;
+    color: #FFFFFF;
+    border-top: 2px solid #4D4D4D ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 05px 15px;
+}
+
+.footer_text_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFFFFF;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 11px;
+    margin: 7% 7% 0 7%;
+    width: 86%;
+    gap: 8px;
+}
+
+.footer_logo_img{
+    width: 100px;
+    margin: 7% 0 -35% 0;
+}
+
+.footer_logo_img_none{
+    display: none;
+}
+
+.footer_text_container a{
+    text-decoration: underline;
+    color: #FFFFFF;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.footer_text{
+    align-self: center;
+}
+
+.footer_links{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    word-spacing: 5px;
+    align-items: center;
+}
+
+#logo {
+    width: 60%;
+}
+
+.link_decoration{
+    text-decoration:none;
+}

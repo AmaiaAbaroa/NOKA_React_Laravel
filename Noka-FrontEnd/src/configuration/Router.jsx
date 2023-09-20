@@ -4,7 +4,7 @@ import Landingpage from "../pages/Landingpage/Landingpage";
 import RegistroUsuario from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import SignInSuccessPage from "../pages/SignInSucces/SignInSuccessPage";
-import Profile from "../pages/Profile";
+import UserProfile from "../pages/UserProfile/UserProfile";
 
 const Router = () => {
   return (
@@ -13,7 +13,7 @@ const Router = () => {
         <Routes>
           <Route path="/" element={<Landingpage></Landingpage>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
-          <Route path="/profile" element={<Profile></Profile>}></Route>
+          <Route path="/profile" element={<UserProfile></UserProfile>}></Route>
           <Route
             path="/registro"
             element={<RegistroUsuario></RegistroUsuario>}

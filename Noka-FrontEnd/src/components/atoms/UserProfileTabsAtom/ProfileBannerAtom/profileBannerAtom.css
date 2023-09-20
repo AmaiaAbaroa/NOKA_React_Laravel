@@ -1,0 +1,27 @@
+.profile_banner_container{
+    background-color: #C6738A;
+    width: 100%;
+    height: 18vh;
+    display: flex;
+    gap: 7%;
+    align-items: center;
+    justify-content: start;
+    border-bottom: none;
+}
+
+.profile_banner_container img {
+    width: 20%;
+    border-radius: 50%;
+    border: 2px solid #4D4D4D ;
+    background-color: #D9D9D9;
+    margin-left: 10%;
+    padding: 2%;
+}
+
+.user-profile-banner-name-text{
+    color: #5C5A5A;
+    font-size: 25px;
+    font-weight: 800;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
