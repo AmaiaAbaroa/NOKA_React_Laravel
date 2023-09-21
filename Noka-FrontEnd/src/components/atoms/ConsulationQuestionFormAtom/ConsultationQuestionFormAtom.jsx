@@ -138,7 +138,7 @@ const ConsultationQuestionFormAtom = () => {
                         </label>
                     </div>
                     <ButtonAtom
-                        label={"SARTU"}
+                        label={"BIDALI"}
                         color={"blue"}
                         width={"small"}
                         type={"submit"}
