@@ -3,8 +3,7 @@ import NavbarAtom from "../../components/atoms/NavbarAtom/NavBarAtom";
 import CarouselAtom from "../../components/atoms/CarouselAtom/CarouselAtom";
 import AccordionLandingpage from "../../components/molecules/AccordionLandingape/AccordionLandingpage";
 import FooterAtom from "../../components/atoms/FooterAtom/FooterAtom";
-import SearchFilterMolecule from "../../components/molecules/SearchFilterMolecule/SearchFilterMolecule";
-
+import SearchAtom from "../../components/atoms/SearchAtom/SearchAtom";
 const Landingpage = () => {
   return (
     <>
@@ -14,7 +13,7 @@ const Landingpage = () => {
         subnavbar_subtitle={true}
       />
       <main className="landingpage_main">
-        <SearchFilterMolecule></SearchFilterMolecule>
+        <SearchAtom></SearchAtom>
         <CarouselAtom></CarouselAtom>
         <AccordionLandingpage></AccordionLandingpage>
       </main>

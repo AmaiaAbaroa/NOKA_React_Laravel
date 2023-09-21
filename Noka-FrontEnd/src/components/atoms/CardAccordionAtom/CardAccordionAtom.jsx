@@ -41,7 +41,7 @@ const AccordionLandingpage = ({color_article, card_id_identifier, card_number_id
     card_number_identifier: PropTypes.number.isRequired,
     accordion_title: PropTypes.string.isRequired,
     accordion_subtitle: PropTypes.string,
-    accordion_body: PropTypes.element.isRequired,
+    accordion_body: PropTypes.any.isRequired,
   };
 
   
