@@ -15,6 +15,7 @@ nav{
     margin-bottom: 5%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .subnavbar_container{
@@ -60,10 +61,11 @@ nav{
 }
 
 .navbar_greeting_text {
-    margin-right: -10%;
+    margin-right: -25%;
     color: #C6738A;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 800;
+    font-size: 15px;
     display: flex; 
     align-items: center; 
     justify-content: space-between;
