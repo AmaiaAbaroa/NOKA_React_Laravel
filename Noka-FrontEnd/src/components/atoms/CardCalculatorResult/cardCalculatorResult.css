@@ -1,0 +1,42 @@
+.card_calculator_container{
+    width: 100%;
+    background-color: #FFFFFF;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #4D4D4D ;
+    padding: 5%;
+}
+
+.card_calculator_sections{
+    display: flex;
+    align-items: center;
+}
+
+#card_calculator_section_data{
+    justify-content: end;
+}
+#card_calculator_section_process{
+    justify-content: start;
+}
+#card_calculator_section_points{
+    justify-content: space-between;
+}
+
+.card_calculator_section_title{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    margin: 2% 5% 2% 0;
+}
+
+.card_calculator_section_result{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    width: fit-content;
+    margin: 2% 5% 2% 2%;
+}
+.card_calculator_delete_button{
+    border: none;
+    background-color: #FFFFFF;
+}

@@ -6,21 +6,21 @@ import deleteIcon from "../../../assets/icons/delete_icon.svg";
 const CardCalculatorResult = () => {
     return (
       <>
-          <article className="" >
-            <div>
-              <h5>Data:</h5>
-              <p>2023/09/13</p>
+          <article className="card_calculator_container" >
+            <div className="card_calculator_sections" id="card_calculator_section_data">
+              <h5 className='card_calculator_section_title'>Data:</h5>
+              <p className='card_calculator_section_result'>2023/09/13</p>
             </div>
-            <div>
-              <h5>Prosezua:</h5>
-              <p>Birbaremazioa</p>
+            <div className="card_calculator_sections" id="card_calculator_section_process">
+              <h5 className='card_calculator_section_title'>Prosezua:</h5>
+              <p className='card_calculator_section_result'>Birbaremazioa</p>
             </div>
-            <div>
-              <div>
-                <h5>Puntuazio osoa:</h5>
-                <p>21,564 puntu</p>
+            <div className="card_calculator_sections" id="card_calculator_section_points">
+              <div className="card_calculator_sections">
+                <h5 className='card_calculator_section_title'>Puntuazioa:</h5>
+                <p className='card_calculator_section_result'>21,564 </p>
               </div>
-              <img src={deleteIcon} alt="Klip irudia" />
+              <button className='card_calculator_delete_button' type='button'><img src={deleteIcon} alt="Klip irudia" /></button>
             </div>
           </article>
       </>
@@ -28,7 +28,7 @@ const CardCalculatorResult = () => {
   };
 
   CardCalculatorResult.propTypes = {
-    color_article: PropTypes.string.isRequired,
+    color_article: PropTypes.string,
   };
 
   
