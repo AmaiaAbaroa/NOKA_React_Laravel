@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Resources\UserResource;
@@ -16,11 +15,21 @@ class AuthController extends Controller
         try {
             $data = $request->validated();
 
+            // Depuración: Imprimir los datos
+             dd($data);
+
             $user = User::create([
                 'name' => $data['name'],
+                'lastname' =>$data['lastname'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
-                
+                'birthdate' => $data['birthdate'],
+                'gender' => $data['gender'],
+                'province' => $data['province'],
+                'kidegoa' => $data['kidegoa'],
+                'etapa' => $data['etapa'],
+                'privacy'=> $data['privacy'],
+                'info' => $data['info'],
             ]);
 
             $token = $user->createToken('auth_token')->plainTextToken;
@@ -32,7 +41,7 @@ class AuthController extends Controller
             ])->withCookie($cookie);
         } catch (\Exception $e) {
         return response()->json([
-            'message' => 'An error occurred while registering the user.',
+            'message' => 'Akats bat gertatu da erabiltzailea erregistratzerakoan.',
             'error' => $e->getMessage(),
         ], 500);
     }
@@ -48,7 +57,7 @@ class AuthController extends Controller
 
             if (!$user || !Hash::check($data['password'], $user->password)) {
                 return response()->json([
-                    'message' => 'Email or password is incorrect!'
+                    'message' => 'Helbide elektronikoa edo pasahitza ez da zuzena!'
                 ], 401);
             }
 
@@ -61,7 +70,7 @@ class AuthController extends Controller
             ])->withCookie($cookie);
         } catch (\Exception $e) {
             return response()->json([
-                'message' => 'An error occurred while logging in.',
+                'message' => 'Akats bat gertatu zen sartzerakoan.',
                 'error' => $e->getMessage(),
             ], 500);
         }
@@ -76,7 +85,7 @@ class AuthController extends Controller
             $cookie = cookie()->forget('token');
 
             return response()->json([
-                'message' => 'Logged out successfully!'
+                'message' => 'Saio bukaera burutu da!'
             ])->withCookie($cookie);
         }catch (\Exception $e) {
             return response()->json([
@@ -92,9 +101,44 @@ class AuthController extends Controller
             return new UserResource($request->user());
         } catch (\Exception $e) {
             return response()->json([
-                'message' => 'An error occurred while fetching user data.',
+                'message' => 'Akats bat gertatu zen erabiltzailearen datuak jasotzean.',
                 'error' => $e->getMessage(),
             ], 500);
         }
     }
-}
+
+    
+    // Obtener opciones de género
+    public function getGenderOptions()
+    {
+        $genderOptions = User::getEnumValues('gender');
+
+        return response()->json($genderOptions);
+    }
+
+    // Obtener opciones de provincias
+    public function getProvinceOptions()
+    {
+        $provinceOptions = User::getEnumValues('province');
+
+        return response()->json($provinceOptions);
+    }
+
+    // Obtener opciones de kidegoa
+    public function getKidegoaOptions()
+    {
+        $kidegoaOptions = User::getEnumValues('kidegoa');
+
+        return response()->json($kidegoaOptions);
+    }
+
+    // Obtener opciones de etapa
+    public function getEtapaOptions()
+    {
+        $etapaOptions = User::getEnumValues('etapa');
+
+        return response()->json($etapaOptions);
+    }
+
+    }
+

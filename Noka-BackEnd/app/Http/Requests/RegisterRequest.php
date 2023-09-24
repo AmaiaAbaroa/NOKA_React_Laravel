@@ -31,7 +31,14 @@ class RegisterRequest extends FormRequest
                 'confirmed',
                 Password::min(5),
                 // Password::min(8)->mixedCase()->numbers()->symbols()->uncompromised(),
-            ]
+            ],
+            'birthdate' => 'required|date',
+            'gender' => 'required|in:Emakumezkoa,Gizonezkoa,No binario,Bestelakoak',
+            'province' => 'required|in:Araba,Bizkaia,Gipuzkoa',
+            'kidegoa' => 'required|in:Ahur Hezkuntza,Lehen Hezkuntza,Bigarren Hezkuntza',
+            'etapa' => 'required|in:Ez dakit,Zerbait,Hutsik',
+            'privacy' => 'required|boolean',
+            'info' => 'required|boolean',
         ];
     }
 }

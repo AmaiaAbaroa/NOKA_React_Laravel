@@ -43,7 +43,7 @@
   margin-left: 10%;
 }
 
-input[type="checkbox"] {
+.landingpage_article_card input[type="checkbox"] {
   appearance: none;
   position: fixed;
   top: -100vh; left: -100vh;

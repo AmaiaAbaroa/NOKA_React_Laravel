@@ -19,8 +19,16 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'lastname',
         'email',
         'password',
+        'birthdate',
+        'gender', 
+        'province',
+        'kidegoa',
+        'etapa',
+        'privacy',
+        'info',
     ];
 
     /**
@@ -42,4 +50,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         // 'password' => 'hashed',
     ];
+
+    public static function getEnumValues($field)
+    {
+    $enumValues = [
+        'gender' => ['Emakumezkoa', 'Gizonezkoa', 'No binario', 'Bestelakoak'],
+        'province' => ['Araba', 'Bizkaia', 'Gipuzkoa'],
+        'kidegoa' => ['Ahur Hezkuntza', 'Lehen Hezkuntza', 'Bigarren Hezkuntza'],
+        'etapa' => ['Ez dakit', 'Zerbait', 'Hutsik'],
+    ];
+
+    return $enumValues[$field] ?? [];
+    }
+
 }
+

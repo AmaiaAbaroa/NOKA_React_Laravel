@@ -91,3 +91,29 @@ input:focus{
     font-weight: 800;
     text-align: center;
 }
+
+.register_permisions_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10%;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #4D4D4D;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+#register_info_checkbox input[type="checkbox"]{
+    height: 2vh;
+    width: 40px;
+    margin-right: 4%;
+}
+
+#register_privacy_checkbox input[type="checkbox"]{
+    height: 2vh;
+    width: 40px;
+    margin-right: 2%;
+}

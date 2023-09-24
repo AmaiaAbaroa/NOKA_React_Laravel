@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'register'])->middleware('enum:gender,province,kidegoa,etapa');
 Route::post('/login', [AuthController::class, 'login']);
+Route::get('/gender-options', [AuthController::class, 'getGenderOptions']);
+Route::get('/province-options', [AuthController::class, 'getProvinceOptions']);
+Route::get('/kidegoa-options', [AuthController::class, 'getKidegoaOptions']);
+Route::get('/etapa-options', [AuthController::class, 'getEtapaOptions']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
