@@ -11,16 +11,70 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
     // register a new user method
-    public function register(RegisterRequest $request) {
+//     public function register(RegisterRequest $request) {
+//         try {
+//             $data = $request->validated();
+
+//             echo("Name: " . $data['name']);
+//             error_log("Lastname: " . $data['lastname']);
+//             error_log("Email: " . $data['email']);
+//             error_log("Gender: " . $data['gender']);
+//             error_log("Province: " . $data['province']);
+//             error_log("Kidegoa: " . $data['kidegoa']);
+//             error_log("Etapa: " . $data['etapa']);
+
+//             // // Depuración: Imprimir los datos
+//             //  dd($data);
+
+//             $user = User::create([
+//                 'name' => $data['name'],
+//                 'lastname' =>$data['lastname'],
+//                 'email' => $data['email'],
+//                 'password' => Hash::make($data['password']),
+//                 'birthdate' => $data['birthdate'],
+//                 'gender' => $data['gender'],
+//                 'province' => $data['province'],
+//                 'kidegoa' => $data['kidegoa'],
+//                 'etapa' => $data['etapa'],
+//                 'privacy'=> $data['privacy'],
+//                 'info' => $data['info'],
+//             ]);
+
+//             $token = $user->createToken('auth_token')->plainTextToken;
+
+//             $cookie = cookie('token', $token, 60 * 24); // 1 day
+
+//             return response()->json([
+//                 'user' => new UserResource($user),
+//             ])->withCookie($cookie);
+//         } catch (\Exception $e) {
+//         return response()->json([
+//             'message' => 'Akats bat gertatu da erabiltzailea erregistratzerakoan.',
+//             'error' => $e->getMessage(),
+//         ], 500);
+//     }
+// }
+
+
+    // Registrar un nuevo usuario
+    public function register(RegisterRequest $request)
+    {
         try {
             $data = $request->validated();
 
-            // Depuración: Imprimir los datos
-             dd($data);
+            error_log("Gender: " . $data['gender']);
+
+            //Definir los valores enumerados
+            $enumValues = [
+                'gender' => ['Emakumezkoa', 'Ez bitarra', 'Gizonezkoa', 'Beste bat'],
+                'province' => ['Araba', 'Bizkaia', 'Gipuzkoa'],
+                'kidegoa' => ['Ahur Hezkuntza', 'Lehen Hezkuntza', 'Bigarren Hezkuntza'],
+                'etapa' => ['Ez dakit', 'Zerbait', 'Hutsik'],
+            ];
 
             $user = User::create([
                 'name' => $data['name'],
-                'lastname' =>$data['lastname'],
+                'lastname' => $data['lastname'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
                 'birthdate' => $data['birthdate'],
@@ -28,9 +82,10 @@ class AuthController extends Controller
                 'province' => $data['province'],
                 'kidegoa' => $data['kidegoa'],
                 'etapa' => $data['etapa'],
-                'privacy'=> $data['privacy'],
+                'privacy' => $data['privacy'],
                 'info' => $data['info'],
             ]);
+           
 
             $token = $user->createToken('auth_token')->plainTextToken;
 
@@ -38,14 +93,16 @@ class AuthController extends Controller
 
             return response()->json([
                 'user' => new UserResource($user),
+                'enums' => $enumValues, // Enviar valores enumerados
             ])->withCookie($cookie);
         } catch (\Exception $e) {
-        return response()->json([
-            'message' => 'Akats bat gertatu da erabiltzailea erregistratzerakoan.',
-            'error' => $e->getMessage(),
-        ], 500);
+            return response()->json([
+                'message' => 'Ha ocurrido un error al registrar al usuario.',
+                'error' => $e->getMessage(),
+            ], 500);
+        }
     }
-}
+
 
     // login a user method
     public function login(LoginRequest $request) {

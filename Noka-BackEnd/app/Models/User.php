@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -17,6 +18,19 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     public static function getEnumValues($field)
+     {
+     $enumValues = [
+         'gender' => ['Emakumezkoa','Ez bitarra','Gizonezkoa','Beste bat'],
+         'province' => ['Araba','Bizkaia','Gipuzkoa'],
+         'kidegoa' => ['Ahur Hezkuntza','Lehen Hezkuntza','Bigarren Hezkuntza'],
+         'etapa' => ['Ez dakit','Zerbait','Hutsik'],
+     ];
+ 
+     return $enumValues[$field] ?? [];
+     }
+
     protected $fillable = [
         'name',
         'lastname',
@@ -51,17 +65,7 @@ class User extends Authenticatable
         // 'password' => 'hashed',
     ];
 
-    public static function getEnumValues($field)
-    {
-    $enumValues = [
-        'gender' => ['Emakumezkoa', 'Gizonezkoa', 'No binario', 'Bestelakoak'],
-        'province' => ['Araba', 'Bizkaia', 'Gipuzkoa'],
-        'kidegoa' => ['Ahur Hezkuntza', 'Lehen Hezkuntza', 'Bigarren Hezkuntza'],
-        'etapa' => ['Ez dakit', 'Zerbait', 'Hutsik'],
-    ];
 
-    return $enumValues[$field] ?? [];
-    }
 
 }
 

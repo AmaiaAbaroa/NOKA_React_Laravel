@@ -27,7 +27,13 @@ class UserRequest extends FormRequest
             'email' => 'required|email|unique:users,email,' . $this->id, 
             'password' => 'nullable|min:8|mixedCase|numbers|symbols|uncompromised',
             'birthdate' => 'required|date',
-            'gender' => 'required|in:Emakumezkoa,Gizonezkoa,No binario,Bestelakoak',
+            'gender' => ['required', 'enum:Emakumezkoa,Ez bitarra,Gizonezkoa,Beste bat'],
+            'province' => ['required', 'enum:Araba, Bizkaia, Gipuzkoa'],
+            'kidegoa' => ['required', 'enum:Ahur Hezkuntza, Lehen Hezkuntza, Bigarren Hezkuntza'],
+            'etapa' => ['required', 'enum:Ez dakit, Zerbait, Hutsik'],
+            'privacy' => 'required|boolean',  
+            'info' => 'nullable|boolean',  
         ];
     }
 }
+

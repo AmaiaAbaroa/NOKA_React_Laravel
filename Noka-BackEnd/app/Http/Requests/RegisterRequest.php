@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Password;
 
+
 class RegisterRequest extends FormRequest
 {
     /**
@@ -33,12 +34,13 @@ class RegisterRequest extends FormRequest
                 // Password::min(8)->mixedCase()->numbers()->symbols()->uncompromised(),
             ],
             'birthdate' => 'required|date',
-            'gender' => 'required|in:Emakumezkoa,Gizonezkoa,No binario,Bestelakoak',
-            'province' => 'required|in:Araba,Bizkaia,Gipuzkoa',
-            'kidegoa' => 'required|in:Ahur Hezkuntza,Lehen Hezkuntza,Bigarren Hezkuntza',
-            'etapa' => 'required|in:Ez dakit,Zerbait,Hutsik',
+            'gender' => ['required', 'enum:Emakumezkoa,Ez bitarra,Gizonezkoa,Beste bat'],
+            'province' => ['required', 'enum:Araba, Bizkaia, Gipuzkoa'],
+            'kidegoa' => ['required', 'enum:Ahur Hezkuntza, Lehen Hezkuntza, Bigarren Hezkuntza'],
+            'etapa' => ['required','required', 'enum:Ez dakit, Zerbait, Hutsik'],
             'privacy' => 'required|boolean',
-            'info' => 'required|boolean',
+            'info' => 'nullable|boolean',
         ];
     }
 }
+
