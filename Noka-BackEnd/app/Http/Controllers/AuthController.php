@@ -60,7 +60,7 @@ class AuthController extends Controller
         
         try{
             $data = $request->validated();
-
+            
             $user = User::where('email', $data['email'])->first();
 
             if (!$user || !Hash::check($data['password'], $user->password)) {

@@ -53,7 +53,7 @@
       justify-content: space-evenly;
   }
   
-  input[type="checkbox"] {
+  #article_card input[type="checkbox"] {
     appearance: none;
     position: fixed;
     top: -100vh; left: -100vh;
