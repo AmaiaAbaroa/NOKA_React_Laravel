@@ -8,24 +8,44 @@ use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+
 
 class AuthController extends Controller
 {
     // register a new user method
     public function register(RegisterRequest $request) {
         try {
+            print("FuuuuController");
+            Log::info('message');
+            // print($request);
+            $out = new \Symfony\Component\Console\Output\ConsoleOutput();
+            $out->writeln("Hello from Terminal");
+
             $data = $request->validated();
+            // print("Fuuuuuu2");
+            // print($data);
+            // error_log("Gender: " . $data['gender']);
 
             $user = User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
-                
+                'lastname' => $data['lastname'],
+                'birthdate' => $data['birthdate'],
+                // 'gender' => $data['gender'], 
+                // 'province' => $data['province'],
+                // 'kidegoa' => $data['kidegoa'],
+                // 'etapa' => $data['etapa'],
+                'privacy' => $data['privacy'],
+                'info' => $data['info'],
             ]);
 
-            $token = $user->createToken('auth_token')->plainTextToken;
+            // $token = $user->createToken('auth_token')->plainTextToken;
 
-            $cookie = cookie('token', $token, 60 * 24); // 1 day
+            // $cookie = cookie('token', $token, 60 * 24); // 1 day
+            
+            $cookie = "cookie";
 
             return response()->json([
                 'user' => new UserResource($user),
@@ -97,4 +117,38 @@ class AuthController extends Controller
             ], 500);
         }
     }
+
+
+    // Obtener opciones de género
+    public function getGenderOptions()
+    {
+        $genderOptions = User::getEnumValues('gender');
+
+        return response()->json($genderOptions);
+    }
+
+    // Obtener opciones de provincias
+    public function getProvinceOptions()
+    {
+        $provinceOptions = User::getEnumValues('province');
+
+        return response()->json($provinceOptions);
+    }
+
+    // Obtener opciones de kidegoa
+    public function getKidegoaOptions()
+    {
+        $kidegoaOptions = User::getEnumValues('kidegoa');
+
+        return response()->json($kidegoaOptions);
+    }
+
+    // Obtener opciones de etapa
+    public function getEtapaOptions()
+    {
+        $etapaOptions = User::getEnumValues('etapa');
+
+        return response()->json($etapaOptions);
+    }
+
 }

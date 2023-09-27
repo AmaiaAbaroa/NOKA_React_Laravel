@@ -5,6 +5,8 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Password;
 
+
+
 class RegisterRequest extends FormRequest
 {
     /**
@@ -22,6 +24,7 @@ class RegisterRequest extends FormRequest
      */
     public function rules(): array
     {
+        
         return [
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email|max:255',
@@ -31,7 +34,15 @@ class RegisterRequest extends FormRequest
                 'confirmed',
                 Password::min(5),
                 // Password::min(8)->mixedCase()->numbers()->symbols()->uncompromised(),
-            ]
+            ],
+            'lastname' => 'required|string',
+            'birthdate' => 'required|date',
+            // 'gender' => 'required|in:Emakumezkoa,Ez bitarra,Gizonezkoa,Beste bat',
+            // 'province' => 'required|in:Araba,Bizkaia,Gipuzkoa',
+            // 'kidegoa' => 'required|in:Ahur Hezkuntza,Lehen Hezkuntza,Bigarren Hezkuntza',
+            // 'etapa' => 'required|in:Ez dakit,Zerbait,Hutsik',
+            'privacy' => 'required|boolean',
+            'info' => 'nullable|boolean',
         ];
     }
 }
