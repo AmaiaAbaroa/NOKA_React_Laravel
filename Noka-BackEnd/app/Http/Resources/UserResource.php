@@ -31,8 +31,8 @@ class UserResource extends JsonResource
             // 'etapa' => $this->etapa,
             'privacy'=> $this->privacy,
             'info' => $this->info,
-            'role' => $this->role,
-            'status' => $this->status
+            // 'role' => $this->role,
+            // 'status' => $this->status
         ];
     }
 }

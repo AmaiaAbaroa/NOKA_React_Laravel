@@ -19,8 +19,6 @@ class AuthController extends Controller
             print("FuuuuController");
             Log::info('message');
             // print($request);
-            $out = new \Symfony\Component\Console\Output\ConsoleOutput();
-            $out->writeln("Hello from Terminal");
 
             $data = $request->validated();
             // print("Fuuuuuu2");
@@ -41,11 +39,10 @@ class AuthController extends Controller
                 'info' => $data['info'],
             ]);
 
-            // $token = $user->createToken('auth_token')->plainTextToken;
+            $token = $user->createToken('auth_token')->plainTextToken;
 
-            // $cookie = cookie('token', $token, 60 * 24); // 1 day
+            $cookie = cookie('token', $token, 60 * 24); // 1 day
             
-            $cookie = "cookie";
 
             return response()->json([
                 'user' => new UserResource($user),
@@ -119,36 +116,36 @@ class AuthController extends Controller
     }
 
 
-    // Obtener opciones de género
-    public function getGenderOptions()
-    {
-        $genderOptions = User::getEnumValues('gender');
+    // // Obtener opciones de género
+    // public function getGenderOptions()
+    // {
+    //     $genderOptions = User::getEnumValues('gender');
 
-        return response()->json($genderOptions);
-    }
+    //     return response()->json($genderOptions);
+    // }
 
-    // Obtener opciones de provincias
-    public function getProvinceOptions()
-    {
-        $provinceOptions = User::getEnumValues('province');
+    // // Obtener opciones de provincias
+    // public function getProvinceOptions()
+    // {
+    //     $provinceOptions = User::getEnumValues('province');
 
-        return response()->json($provinceOptions);
-    }
+    //     return response()->json($provinceOptions);
+    // }
 
-    // Obtener opciones de kidegoa
-    public function getKidegoaOptions()
-    {
-        $kidegoaOptions = User::getEnumValues('kidegoa');
+    // // Obtener opciones de kidegoa
+    // public function getKidegoaOptions()
+    // {
+    //     $kidegoaOptions = User::getEnumValues('kidegoa');
 
-        return response()->json($kidegoaOptions);
-    }
+    //     return response()->json($kidegoaOptions);
+    // }
 
-    // Obtener opciones de etapa
-    public function getEtapaOptions()
-    {
-        $etapaOptions = User::getEnumValues('etapa');
+    // // Obtener opciones de etapa
+    // public function getEtapaOptions()
+    // {
+    //     $etapaOptions = User::getEnumValues('etapa');
 
-        return response()->json($etapaOptions);
-    }
+    //     return response()->json($etapaOptions);
+    // }
 
 }
