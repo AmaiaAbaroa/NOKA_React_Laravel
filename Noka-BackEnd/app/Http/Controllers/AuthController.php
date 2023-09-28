@@ -10,50 +10,6 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    // register a new user method
-//     public function register(RegisterRequest $request) {
-//         try {
-//             $data = $request->validated();
-
-//             echo("Name: " . $data['name']);
-//             error_log("Lastname: " . $data['lastname']);
-//             error_log("Email: " . $data['email']);
-//             error_log("Gender: " . $data['gender']);
-//             error_log("Province: " . $data['province']);
-//             error_log("Kidegoa: " . $data['kidegoa']);
-//             error_log("Etapa: " . $data['etapa']);
-
-//             // // Depuración: Imprimir los datos
-//             //  dd($data);
-
-//             $user = User::create([
-//                 'name' => $data['name'],
-//                 'lastname' =>$data['lastname'],
-//                 'email' => $data['email'],
-//                 'password' => Hash::make($data['password']),
-//                 'birthdate' => $data['birthdate'],
-//                 'gender' => $data['gender'],
-//                 'province' => $data['province'],
-//                 'kidegoa' => $data['kidegoa'],
-//                 'etapa' => $data['etapa'],
-//                 'privacy'=> $data['privacy'],
-//                 'info' => $data['info'],
-//             ]);
-
-//             $token = $user->createToken('auth_token')->plainTextToken;
-
-//             $cookie = cookie('token', $token, 60 * 24); // 1 day
-
-//             return response()->json([
-//                 'user' => new UserResource($user),
-//             ])->withCookie($cookie);
-//         } catch (\Exception $e) {
-//         return response()->json([
-//             'message' => 'Akats bat gertatu da erabiltzailea erregistratzerakoan.',
-//             'error' => $e->getMessage(),
-//         ], 500);
-//     }
-// }
 
 
     // Registrar un nuevo usuario
@@ -78,10 +34,14 @@ class AuthController extends Controller
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
                 'birthdate' => $data['birthdate'],
-                'gender' => $data['gender'],
-                'province' => $data['province'],
-                'kidegoa' => $data['kidegoa'],
-                'etapa' => $data['etapa'],
+                // 'gender' => $data['gender'],
+                // 'province' => $data['province'],
+                // 'kidegoa' => $data['kidegoa'],
+                // 'etapa' => $data['etapa'],
+                'gender' => array_search($data['gender'], $enumValues['gender']),
+                'province' => array_search($data['province'], $enumValues['province']),
+                'kidegoa' => array_search($data['kidegoa'], $enumValues['kidegoa']),
+                'etapa' => array_search($data['etapa'], $enumValues['etapa']),
                 'privacy' => $data['privacy'],
                 'info' => $data['info'],
             ]);
