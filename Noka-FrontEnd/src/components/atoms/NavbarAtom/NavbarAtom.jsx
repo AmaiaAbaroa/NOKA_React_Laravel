@@ -132,9 +132,9 @@ console.log(user);
 }
 
 NavbarAtom.propTypes = {
-  name_greeting: PropTypes.string.isRequired,
-  subnavbar_subtitle: PropTypes.bool.isRequired,
-  logo_position: PropTypes.string.isRequired,
+  name_greeting: PropTypes.string,
+  subnavbar_subtitle: PropTypes.bool,
+  logo_position: PropTypes.string,
 };
 
 export default NavbarAtom;
