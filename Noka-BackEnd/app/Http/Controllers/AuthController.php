@@ -8,22 +8,25 @@ use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Http\JsonResponse;
+
 
 
 class AuthController extends Controller
 {
     // register a new user method
-    public function register(RegisterRequest $request) {
+    public function register(RegisterRequest $request): JsonResponse
+     {
         try {
-            print("FuuuuController");
-            Log::info('message');
+            // print("FuuuuController");
             // print($request);
+            // $tipo=gettype($request);
+            // print($tipo);
 
             $data = $request->validated();
-            // print("Fuuuuuu2");
-            // print($data);
-            // error_log("Gender: " . $data['gender']);
+
+            // $type=gettype($data);
+            // print($type);
 
             $user = User::create([
                 'name' => $data['name'],
@@ -31,10 +34,6 @@ class AuthController extends Controller
                 'password' => Hash::make($data['password']),
                 'lastname' => $data['lastname'],
                 'birthdate' => $data['birthdate'],
-                // 'gender' => $data['gender'], 
-                // 'province' => $data['province'],
-                // 'kidegoa' => $data['kidegoa'],
-                // 'etapa' => $data['etapa'],
                 'privacy' => $data['privacy'],
                 'info' => $data['info'],
             ]);
@@ -46,7 +45,11 @@ class AuthController extends Controller
 
             return response()->json([
                 'user' => new UserResource($user),
-            ])->withCookie($cookie);
+            ], 200)->withCookie($cookie);
+            
+            // $Authresponsetipo=gettype($request);
+            // print($Authresponsetipo);
+
         } catch (\Exception $e) {
         return response()->json([
             'message' => 'An error occurred while registering the user.',

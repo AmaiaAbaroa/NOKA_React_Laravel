@@ -105,10 +105,14 @@ const RegistroUsuario = () => {
       // Utiliza APIService para realizar la solicitud POST
       const response = await APIService("/register", "POST", body);
       console.log("Response from API:", response);
+      console.log(typeof response);
 
       if (response.user) {
+        console.log("Arriba SetUser:", response);
         setUser(response.user);
+        console.log("Abajo SetUser:", response.user);
         console.log("Redirigiendo a /registro-exitoso");
+
         navigate("/registro-exitoso");
       }
     } catch (error) {
@@ -176,8 +180,10 @@ const RegistroUsuario = () => {
     // const { name, email, password, cpassword, lastname, birthdate, gender, province, kidegoa, etapa, privacy, info  } = e.target.elements;
     
     // Convertir los valores de privacy e info a booleanos
+
     const privacyValue = privacy.checked;
     const infoValue = info.checked;
+
     // const genderValue = gender.value;
     // console.log("Gender value:", gender.value);
 
