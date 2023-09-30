@@ -60,7 +60,7 @@ class UserController extends Controller
      public function update(Request $request, $id): JsonResponse
      {
          $user = User::find($id);
-     
+        
          if (!$user) {
              return response()->json(['error' => 'Usuario no encontrado'], 404);
          }
@@ -70,11 +70,12 @@ class UserController extends Controller
      
          // Actualizar los campos del usuario con los datos de la solicitud
          $user->update($data);
-
+         
          // Recuperar el usuario actualizado
          $updatedUser = User::find($id);
 
          $updatedUser->save();
+        //  print("Update Method" . $updatedUser);
 
          return response()->json(['success' => true, 'data' => $updatedUser], 200);
      }
