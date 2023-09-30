@@ -77,7 +77,7 @@ class UserController extends Controller
          $updatedUser->save();
         //  print("Update Method" . $updatedUser);
 
-         return response()->json(['success' => true, 'data' => $updatedUser], 200);
+         return response()->json([ 'data' => $updatedUser, 'success' => true,], 200);
      }
      
 
