@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,21 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
+// Listar todos los usuarios
+Route::get('/users', [UserController::class, 'index']);
+// Editar un usuario específico
+Route::get('/users/{id}/edit', [UserController::class, 'edit']);
+// Actualizar un usuario específico
+Route::put('/users/{id}', [UserController::class, 'update']);
+// Mostrar un usuarios especifico
+Route::get('/users/{id}', [UserController::class, 'show']);
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/user', [AuthController::class, 'user']);
+
+
+
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();

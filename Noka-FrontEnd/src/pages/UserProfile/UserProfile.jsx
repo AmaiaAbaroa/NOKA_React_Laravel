@@ -19,7 +19,7 @@ export default function UserProfile() {
         subnavbar_subtitle={false}
       />
       <main>
-        <ProfileBannerAtom user_name={user ? user.name : ""} user_surname={"Looney"}></ProfileBannerAtom>
+        <ProfileBannerAtom user_name={ user ? user.name : " "} user_surname={ user ? user.lastname : " "}></ProfileBannerAtom>
         <ProfileTabsAtom
           element_tab1={<UserProfileBodyTab1></UserProfileBodyTab1>}
           element_tab2={<UserProfileBodyTab2></UserProfileBodyTab2>}
