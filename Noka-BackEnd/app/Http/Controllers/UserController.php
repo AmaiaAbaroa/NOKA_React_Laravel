@@ -39,19 +39,6 @@ class UserController extends Controller
         return response ()->json($user, 200);
     }
 
-    /**
-     * Edit the specified resource.
-     */
-    public function edit($id)
-{
-    $user = User::find($id);
-    
-    if (!$user) {
-        return response()->json(['error' => 'Usuario no encontrado'], 404);
-    }
-    
-    return response()->json(['data' => $user], 200);
-}
 
     /**
      * Update the specified resource in storage.

@@ -22,17 +22,16 @@ Route::post('/login', [AuthController::class, 'login']);
 
 // Listar todos los usuarios
 Route::get('/users', [UserController::class, 'index']);
-// Editar un usuario específico
-Route::get('/users/{id}/edit', [UserController::class, 'edit']);
-// Actualizar un usuario específico
-Route::put('/users/{id}', [UserController::class, 'update']);
+
+
 // Mostrar un usuarios especifico
 Route::get('/users/{id}', [UserController::class, 'show']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/user', [AuthController::class, 'user']);
-
+    // Actualizar un usuario específico
+    Route::put('/users/{id}', [UserController::class, 'update']);
 
 
 

@@ -1,8 +1,10 @@
+import './userProfileEditModal.css';
 import { useState } from 'react';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { APIService } from '../../../../services/APIService';
 import { useAuth } from '../../../../context/AuthContext';
+// import ButtonAtom from '../../ButtonAtom/ButtonAtom';
 
 Modal.setAppElement('#root'); 
 
@@ -49,11 +51,12 @@ function UserProfileEditModal({ isOpen, onRequestClose, initialUserData }) {
         <Modal
             isOpen={isOpen}
             onRequestClose={onRequestClose}
+            className="profile_edit_modal_container"
         >
-            <h2>Edita tu perfil</h2>
+            <h2 className='profile_edit_title'>Zure profila editatu</h2>
             <form>
-                <div className="form-group">
-                    <label>Nombre</label>
+                <div className="profile_edit_modal_divs">
+                    <label>Izena</label>
                     <input
                         type="text"
                         name="name"
@@ -61,8 +64,8 @@ function UserProfileEditModal({ isOpen, onRequestClose, initialUserData }) {
                         onChange={handleInputChange}
                     />
                 </div>
-                <div className="form-group">
-                    <label>Apellido</label>
+                <div className="profile_edit_modal_divs">
+                    <label>Abizena</label>
                     <input
                         type="text"
                         name="lastname"
@@ -70,8 +73,8 @@ function UserProfileEditModal({ isOpen, onRequestClose, initialUserData }) {
                         onChange={handleInputChange}
                     />
                 </div>
-                <div className="form-group">
-                    <label>Fecha de Nacimiento</label>
+                <div className="profile_edit_modal_divs">
+                    <label>Jaiotze data</label>
                     <input
                         type="date"
                         name="birthdate"
@@ -80,8 +83,13 @@ function UserProfileEditModal({ isOpen, onRequestClose, initialUserData }) {
                     />
                 </div>
 
-                {/* Agrega más campos de entrada según sea necesario */}
-                <button onClick={handleSave}>Guardar</button>
+                {/* <ButtonAtom  
+                 label={"GORDE"}
+                 color={"red"}
+                 width={"small"}
+                 onClick={handleSave}
+                ></ButtonAtom> */}
+                <button onClick={handleSave} className='profile_edit_modal_button'>GORDE</button>
             </form>
         </Modal>
     );

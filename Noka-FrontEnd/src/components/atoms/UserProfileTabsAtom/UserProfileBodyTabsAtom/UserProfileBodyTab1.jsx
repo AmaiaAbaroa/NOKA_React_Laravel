@@ -5,7 +5,7 @@ import { useState } from 'react';
 import editIcon from './../../../../assets/icons/edit_icon.svg'
 import ProfileUserInformationCard from '../ProfileUserInformationCards/ProfileUserInformationCard';
 import Modal from 'react-modal'; 
-import UserProfileEditModal from './UserProfileEditModal';
+import UserProfileEditModal from '../UserProfleEditModal/UserProfileEditModal';
 
 // function UserProfileBodyTab1() {
 
