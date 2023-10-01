@@ -39,7 +39,7 @@ class ConsultationController extends Controller
 
         }catch (\Exception $e) {
             return response()->json([
-                'message' => 'HA ocurrido un error al crear la consulta.',
+                'message' => 'Ha ocurrido un error al crear la consulta.',
                 'error' => $e->getMessage(),
             ], 500);
         }

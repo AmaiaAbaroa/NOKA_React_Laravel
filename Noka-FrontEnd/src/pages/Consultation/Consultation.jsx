@@ -6,6 +6,7 @@ import CardAccordionAtom from "../../components/atoms/CardAccordionAtom/CardAcco
 import ConsultationQuestionFormAtom from "../../components/atoms/ConsultationQuestionFormAtom/ConsultationQuestionFormAtom";
 import WarningCard from "../../components/atoms/WarningCard/WarningCard";
 import CardQuestionAccordionAtom from "../../components/atoms/CardQuestionAccordionAtom/CardQuestionAccordionAtom";
+// import ConsultationResultsMolecule from "../../components/molecules/ConsultationResultsMolecule/ConsultationResultsMolecule";
 
 const Consultation = () => {
   return (
@@ -17,7 +18,11 @@ const Consultation = () => {
         <WarningCard warning_text_weight={"warning_bold"} warning_text={"GALDERA ERREPIKATUTA BADAGO, EZ DA ERANTZUNGO!!"}></WarningCard>
         <WarningCard warning_text_weight={"warning_light"} warning_text={"Gainontzeko erabiltzaileentzat baliagarriak diren galderak erantzungo dira. Galdera pertsonal eta oso zehatzetarako Hezkuntza Sailarekin jarri harremanetan, mesedez."}></WarningCard>
         <CardAccordionAtom color_article={"grey_article"} card_id_identifier={"31"} accordion_title={"BOTA ZURE KONSULTA"} accordion_body={<ConsultationQuestionFormAtom></ConsultationQuestionFormAtom>}></CardAccordionAtom>
-        <CardAccordionAtom color_article={"grey_article"} card_id_identifier={"32"} accordion_title={"EMAITZAK"} accordion_body={<CardQuestionAccordionAtom question_id={51} input_name={"second_question"}></CardQuestionAccordionAtom>}></CardAccordionAtom>
+        <CardAccordionAtom color_article={"grey_article"} card_id_identifier={"32"} accordion_title={"EMAITZAK"} accordion_body={<CardQuestionAccordionAtom question_id={51}></CardQuestionAccordionAtom>}></CardAccordionAtom>
+        
+        {/* <CardAccordionAtom color_article={"grey_article"} card_id_identifier={"32"} accordion_title={"EMAITZAK"} 
+        accordion_body={<ConsultationResultsMolecule  ></ConsultationResultsMolecule>}>
+        </CardAccordionAtom> */}
       </main>
       <FooterAtom logo={true}></FooterAtom>
     </>

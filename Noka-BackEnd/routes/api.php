@@ -30,7 +30,8 @@ Route::get('/users/{id}', [UserController::class, 'show']);
 Route::post('/consultation', [ConsultationController::class, 'store']);
 // Listar todas las consultas 
 Route::get('/consultation', [ConsultationController::class, 'index']);
-
+// Mostrar una consulta especifica 
+Route::get('/consultation/{id}', [ConsultationController::class, 'show']);
 
 Route::middleware('auth:sanctum')->group(function () {
     // Recoge el usuario autenticado
