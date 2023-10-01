@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ConsultationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,20 +17,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+// Registra un usuario
 Route::post('/register', [AuthController::class, 'register']);
+// Login de un usuario
 Route::post('/login', [AuthController::class, 'login']);
 
 // Listar todos los usuarios
 Route::get('/users', [UserController::class, 'index']);
-
-
 // Mostrar un usuarios especifico
 Route::get('/users/{id}', [UserController::class, 'show']);
+// Añadir una consulta 
+Route::post('/consultation', [ConsultationController::class, 'store']);
+// Listar todas las consultas 
+Route::get('/consultation', [ConsultationController::class, 'index']);
+
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::post('/logout', [AuthController::class, 'logout']);
+    // Recoge el usuario autenticado
     Route::get('/user', [AuthController::class, 'user']);
+    // Logout de un usuario
+    Route::post('/logout', [AuthController::class, 'logout']);
     // Actualizar un usuario específico
     Route::put('/users/{id}', [UserController::class, 'update']);
 
