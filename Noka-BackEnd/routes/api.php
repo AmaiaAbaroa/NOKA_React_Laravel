@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', [AuthController::class, 'register']);
 // Login de un usuario
 Route::post('/login', [AuthController::class, 'login']);
+// Actualizar los datos de un usuario específico
+Route::put('/users/{id}', [UserController::class, 'update']);
 
 // Listar todos los usuarios
 Route::get('/users', [UserController::class, 'index']);
@@ -38,8 +40,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', [AuthController::class, 'user']);
     // Logout de un usuario
     Route::post('/logout', [AuthController::class, 'logout']);
-    // Actualizar un usuario específico
-    Route::put('/users/{id}', [UserController::class, 'update']);
+
 
 
 
