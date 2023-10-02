@@ -1,0 +1,92 @@
+.consultation_question_container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: fit-content;
+    max-width: 90%;
+    padding: 10% 2%;
+    margin: 0 auto;
+    border-radius: 15px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #93CBC2;
+    border: 2px solid #4D4D4D;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.consultation_form_container {
+    display: flex;
+    flex-direction: column;
+    /* max-width: fit-content;
+    max-width: 80%; */
+    margin: auto;
+}
+
+.consultation_form_container input,
+.consultation_form_container textarea,
+.consultation_form_container select {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%; 
+    max-width: 100%;
+    background-color: #FFFF;
+    color: #000000;
+    border-radius: 12px;
+    /* outline: none; */
+    border: 2px solid #4D4D4D ;
+}
+
+#question {
+    height: 20vh;
+}
+
+#consultation_form_container input::placeholder{
+    color: #000000;
+    font-size: 14px;
+}
+input:focus{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #f7f2f0cf;
+}
+
+.consulation_label{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    padding-left: 4px;
+}
+
+.labels_selection_container{    
+    padding: 10px 0 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.selected_option{
+    width: fit-content;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    display: flex;
+    padding: 6px 6px;
+    background-color: #FFFF;
+    color: #000000;
+    border-radius: 12px;
+    border: 2px solid #000000; 
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 5px;
+}
+
+.remove_selected_label{
+    background-color: white;
+    border: none;
+}
+
+.remove_selected_label img{
+    width: 50%;
+}
+
+

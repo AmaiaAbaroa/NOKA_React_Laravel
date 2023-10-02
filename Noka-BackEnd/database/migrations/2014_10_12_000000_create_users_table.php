@@ -17,6 +17,16 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('lastname');
+            $table->date('birthdate');
+            // $table->enum('gender',['Emakumezkoa','Ez bitarra','Gizonezkoa','Beste bat'])->default(null);
+            // $table->enum('province',['Araba', 'Bizkaia', 'Gipuzkoa'])->default(null);
+            // $table->enum('kidegoa',['Ahur Hezkuntza', 'Lehen Hezkuntza', 'Bigarren Hezkuntza'])->default(null);
+            // $table->enum('etapa',['Ez dakit', 'Zerbait', 'Hutsik'])->default(null);
+            // $table->enum('role',['admin','user'])->default('user');
+            // $table->enum('status',['active','inactive'])->default('active');
+            $table->boolean('privacy');
+            $table->boolean('info')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

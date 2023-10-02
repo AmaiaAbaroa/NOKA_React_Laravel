@@ -1,0 +1,81 @@
+.profile_edit_modal_container{
+    height: fit-content;
+    position: absolute;
+    inset: 40px;
+    border: 4px solid #C85A78;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background: rgb(255, 255, 255); 
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 10% 5%;
+    margin-top: 30%;
+    border-radius: 15px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+}
+.profile_edit_title{
+    color: #C85A78;
+    font-size: 25px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.profile_edit_modal_divs{
+    margin: 1% 0;
+    padding: 2%;
+}
+
+.profile_edit_modal_divs label{
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #4D4D4D;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.profile_edit_modal_divs input,
+.profile_edit_modal_divs textarea,
+.profile_edit_modal_divs select {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%; 
+    max-width: 100%;
+    background-color: #FFFF;
+    color: #000000;
+    border-radius: 12px;
+    /* outline: none; */
+    border: 2px solid #4D4D4D ;
+}
+
+
+.profile_edit_modal_divs input::placeholder{
+    color: #000000;
+    font-size: 14px;
+}
+
+.profile_edit_modal_button{
+    padding: 10px 20px;
+    margin: auto;
+    margin-top: 30px;
+    border: none;
+    border-radius: 12px;
+    color: white; text-align: center;
+    border: 0.5px solid #4D4D4D ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 45px;
+    background-color: #ffffff ;
+    color: #C6738A;
+    border: 0.5px solid #C6738A ;
+    font-size: 21px;
+}

@@ -1,0 +1,61 @@
+.button_atom {
+    padding: 10px 20px;
+    margin: auto;
+    margin-top: 30px;
+    border: none;
+    border-radius: 12px;
+    color: white; text-align: center;
+    border: 0.5px solid #4D4D4D ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small{
+    width: 120px;
+    height: 45px;
+}
+
+.medium{
+    width: 170px;
+    height: 60px;
+}
+
+.big{
+    width: 250px;
+    height: 45px;
+}
+
+.blue {
+    background-color: #2091B5;
+}
+.blue:hover{
+    background-color: #ffffff;
+    color:#2091B5
+}
+.white {
+    margin-bottom: 15%;
+    background-color: #4D4D4D;
+    color: #ffffff;
+}
+.white:hover {
+    background-color: #ffffff ;
+    color: #4D4D4D;
+}
+.red {
+    background-color: #ffffff ;
+    color: #C6738A;
+    border: 0.5px solid #C6738A ;
+    font-size: 21px;
+}
+.yellow {
+    background-color: #FED686 ;
+    color: #4D4D4D;
+    border: 0.5px solid #4D4D4D;
+    font-size: 21px;
+}
