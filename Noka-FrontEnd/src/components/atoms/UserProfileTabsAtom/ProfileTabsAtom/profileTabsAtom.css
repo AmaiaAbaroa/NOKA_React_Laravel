@@ -19,7 +19,6 @@
     padding: 20px;
     border: none;
     position: relative;
-    /* z-index: 100; */
   }
   
   .tab>a {
@@ -28,7 +27,6 @@
     border-radius: 10px 10px 0 0;
     border-bottom: 0;
     color:#4D4D4D;
-    /* font-size: 20px; */
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 800;
     text-align: center;

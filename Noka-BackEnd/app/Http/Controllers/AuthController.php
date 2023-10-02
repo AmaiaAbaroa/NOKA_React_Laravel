@@ -14,19 +14,12 @@ use Illuminate\Http\JsonResponse;
 
 class AuthController extends Controller
 {
-    // register a new user method
+
     public function register(RegisterRequest $request): JsonResponse
      {
         try {
-            // print("FuuuuController");
-            // print($request);
-            // $tipo=gettype($request);
-            // print($tipo);
 
             $data = $request->validated();
-
-            // $type=gettype($data);
-            // print($type);
 
             $user = User::create([
                 'name' => $data['name'],
@@ -40,15 +33,13 @@ class AuthController extends Controller
 
             $token = $user->createToken('auth_token')->plainTextToken;
 
-            $cookie = cookie('token', $token, 60 * 24); // 1 day
+            $cookie = cookie('token', $token, 60 * 24); 
             
 
             return response()->json([
                 'user' => new UserResource($user),
             ], 200)->withCookie($cookie);
             
-            // $Authresponsetipo=gettype($request);
-            // print($Authresponsetipo);
 
         } catch (\Exception $e) {
         return response()->json([
@@ -58,7 +49,6 @@ class AuthController extends Controller
     }
 }
 
-    // login a user method
     public function login(LoginRequest $request) {
         
         try{
@@ -74,7 +64,7 @@ class AuthController extends Controller
 
             $token = $user->createToken('auth_token')->plainTextToken;
 
-            $cookie = cookie('token', $token, 60 * 24); // 1 day
+            $cookie = cookie('token', $token, 60 * 24); 
 
             return response()->json([
                 'user' => new UserResource($user),
@@ -87,7 +77,6 @@ class AuthController extends Controller
         }
     }
 
-    // logout a user method
     public function logout(Request $request) {
         
         try{
@@ -106,7 +95,6 @@ class AuthController extends Controller
         }
     }
 
-    // get the authenticated user method
     public function user(Request $request) {
         try{
             return new UserResource($request->user());
@@ -118,37 +106,5 @@ class AuthController extends Controller
         }
     }
 
-
-    // // Obtener opciones de género
-    // public function getGenderOptions()
-    // {
-    //     $genderOptions = User::getEnumValues('gender');
-
-    //     return response()->json($genderOptions);
-    // }
-
-    // // Obtener opciones de provincias
-    // public function getProvinceOptions()
-    // {
-    //     $provinceOptions = User::getEnumValues('province');
-
-    //     return response()->json($provinceOptions);
-    // }
-
-    // // Obtener opciones de kidegoa
-    // public function getKidegoaOptions()
-    // {
-    //     $kidegoaOptions = User::getEnumValues('kidegoa');
-
-    //     return response()->json($kidegoaOptions);
-    // }
-
-    // // Obtener opciones de etapa
-    // public function getEtapaOptions()
-    // {
-    //     $etapaOptions = User::getEnumValues('etapa');
-
-    //     return response()->json($etapaOptions);
-    // }
 
 }

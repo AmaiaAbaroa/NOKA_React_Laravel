@@ -17,8 +17,6 @@
 .consultation_form_container {
     display: flex;
     flex-direction: column;
-    /* max-width: fit-content;
-    max-width: 80%; */
     margin: auto;
 }
 
@@ -34,7 +32,6 @@
     background-color: #FFFF;
     color: #000000;
     border-radius: 12px;
-    /* outline: none; */
     border: 2px solid #4D4D4D ;
 }
 
@@ -67,7 +64,6 @@ input:focus{
 .selected_option{
     width: fit-content;
     justify-content: space-evenly;
-    /* align-items: center; */
     display: flex;
     padding: 6px 6px;
     background-color: #FFFF;

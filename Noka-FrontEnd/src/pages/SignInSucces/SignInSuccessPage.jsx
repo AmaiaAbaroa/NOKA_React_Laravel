@@ -7,7 +7,7 @@ import NavbarAtom from "../../components/atoms/NavbarAtom/NavBarAtom";
 import FooterAtom from "../../components/atoms/FooterAtom/FooterAtom";
 
 export default function SignInSuccessPage() {
-  const { user } = useAuth(); // Obtén la información del usuario del contexto
+  const { user } = useAuth(); 
   console.log(user);
 
   return (

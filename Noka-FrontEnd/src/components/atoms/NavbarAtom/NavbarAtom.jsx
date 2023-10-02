@@ -13,7 +13,7 @@ import ButtonAtom from '../ButtonAtom/ButtonAtom';
 
 function NavbarAtom({name_greeting, subnavbar_subtitle, logo_position}) {
   
-const { user } = useAuth(); // Obtén la información del usuario del contexto
+const { user } = useAuth(); 
 console.log(user);
   
   const [isSocialMenuOpen, setSocialMenuOpen] = useState(false);
@@ -21,12 +21,12 @@ console.log(user);
 
   const handleSocialMenuClick = () => {
     setSocialMenuOpen(!isSocialMenuOpen);
-    setAccountMenuOpen(false); // Cierra el menú de cuenta si estaba abierto
+    setAccountMenuOpen(false); 
   };
 
   const handleAccountMenuClick = () => {
     setAccountMenuOpen(!isAccountMenuOpen);
-    setSocialMenuOpen(false); // Cierra el menú social si estaba abierto
+    setSocialMenuOpen(false); 
   };
 
   return (
@@ -50,7 +50,7 @@ console.log(user);
       </nav>
 
 
-        {/* Menu desplegable social_menu */}
+
       <div className={isSocialMenuOpen ? 'social_menu social_menu_active' : 'social_menu'}>
 
                <div className='social_menu_icon' onClick={handleSocialMenuClick}>
@@ -100,7 +100,7 @@ console.log(user);
              </ul>
 
       </div>
-        {/* Contenido del menú de cuenta */}
+        
       <div className={isAccountMenuOpen ? 'account_menu account_menu_active' : 'account_menu'}>
             <div className='account_menu_icon' onClick={handleAccountMenuClick}>
                     <img src={menux} alt="Menu desplegable."/>    

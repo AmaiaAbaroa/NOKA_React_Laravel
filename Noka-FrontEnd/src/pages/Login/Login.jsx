@@ -14,7 +14,7 @@ const Login = () => {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-  // login user
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { email, password } = event.target.elements;
@@ -37,10 +37,10 @@ const Login = () => {
       console.log("Error:", error);
       if (error.response && error.response.status === 401) {
         setError(error.response.data.message);
-        setEmailError(""); // Limpiar errores anteriores
-        setPasswordError(""); // Limpiar errores anteriores
+        setEmailError(""); 
+        setPasswordError(""); 
       } else if (error.response && error.response.status === 422) {
-        // En caso de errores de validación específicos del servidor
+
         if (error.response.data.errors.email) {
           setEmailError(error.response.data.errors.email[0]);
         }

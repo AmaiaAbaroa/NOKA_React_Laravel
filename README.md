@@ -1,4 +1,4 @@
-# NOKA
+# NOKA 
 
 ![Under Development](https://img.shields.io/badge/status-under%20development-blue)
 
@@ -21,7 +21,8 @@ The main objective is to simplify the personal management of public workers and 
 <br>
 
 ## Quick video demo
-![VideoDemo](/Noka-FrontEnd/src/assets/img/)
+![VideoDemo](/Noka-FrontEnd/src/assets/img/VideoRegistro.gif)
+![VideoDemo](/Noka-FrontEnd/src/assets/img/VideoLogin.gif)
 
 <br>
 
@@ -51,7 +52,7 @@ The main objective is to simplify the personal management of public workers and 
 
 
 ## User Flow
-![UserStories](/Noka-FrontEnd/src/assets/img/)
+![UserStories](/Noka-FrontEnd/src/assets/img/HistoriasUsuario.png)
 
 ## DataBase Modeling
 ![DBModeling](/Noka-FrontEnd/src/assets/img/ModeladoDatos_DrawIO.PNG)

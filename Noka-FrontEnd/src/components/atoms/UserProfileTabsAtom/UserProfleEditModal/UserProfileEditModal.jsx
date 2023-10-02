@@ -4,7 +4,6 @@ import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { APIService } from '../../../../services/APIService';
 import { useAuth } from '../../../../context/AuthContext';
-// import ButtonAtom from '../../ButtonAtom/ButtonAtom';
 
 Modal.setAppElement('#root'); 
 
@@ -14,28 +13,19 @@ function UserProfileEditModal({ isOpen, onRequestClose, initialUserData }) {
     const { user } = useAuth();
     const [userData, setUserData] = useState(initialUserData);
 
-    // const handleSave = async (name, email, lastname, birthdate) => {
-    //     const body = {
-    //         name,
-    //         email,
-    //         lastname,
-    //         birthdate
-    //     }
     const handleSave = async () => {
         try {
-        // Crea un objeto con los datos a actualizar
         const body = {
             name: userData.name,
             lastname: userData.lastname,
             birthdate: userData.birthdate,
         };
-        
-            // Realiza la solicitud PUT para actualizar la información del usuario
+
             const response = await APIService(`/users/${user.id}`, "PUT", body);
             console.log("Response from API - EDIT:", response.data);
             console.log(typeof response);
 
-            onRequestClose(); // Cierra el modal después de guardar
+            onRequestClose(); 
 
         } catch (error) {
             console.error("Error al intentar editar:", error);
@@ -83,12 +73,6 @@ function UserProfileEditModal({ isOpen, onRequestClose, initialUserData }) {
                     />
                 </div>
 
-                {/* <ButtonAtom  
-                 label={"GORDE"}
-                 color={"red"}
-                 width={"small"}
-                 onClick={handleSave}
-                ></ButtonAtom> */}
                 <button onClick={handleSave} className='profile_edit_modal_button'>GORDE</button>
             </form>
         </Modal>

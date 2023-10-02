@@ -8,10 +8,10 @@ import closeIcon from '../../../assets/icons/close_icon.svg';
 
 const SearchFilterMolecule = () => {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
-    const [selectedFilter, setSelectedFilter] = useState(""); // Para rastrear la opción seleccionada
-    const [selectedFromDate, setSelectedFromDate] = useState(""); // Para rastrear la fecha "desde"
-    const [selectedToDate, setSelectedToDate] = useState(""); // Para rastrear la fecha "hasta"
-    const [selectedOptions, setSelectedOptions] = useState([]); // Para rastrear las opciones seleccionadas
+    const [selectedFilter, setSelectedFilter] = useState(""); 
+    const [selectedFromDate, setSelectedFromDate] = useState(""); 
+    const [selectedToDate, setSelectedToDate] = useState(""); 
+    const [selectedOptions, setSelectedOptions] = useState([]); 
 
     const toggleFilter = () => {
         setIsFilterOpen(!isFilterOpen);
@@ -19,7 +19,7 @@ const SearchFilterMolecule = () => {
 
     const handleFilterSelect = (option) => {
         setSelectedFilter(option);
-        // Agrega la opción seleccionada a las opciones seleccionadas
+
         setSelectedOptions([...selectedOptions, option]);
     };
 
@@ -32,13 +32,13 @@ const SearchFilterMolecule = () => {
     };
 
     const removeOption = (option) => {
-        // Filtra las opciones seleccionadas para eliminar la opción específica
+
         const updatedOptions = selectedOptions.filter((selectedOption) => selectedOption !== option);
         setSelectedOptions(updatedOptions);
     };
 
     const completeSelection = () => {
-        setIsFilterOpen(false); // Cierra el menú desplegable al dar por completada la selección
+        setIsFilterOpen(false); 
     };
 
     return (

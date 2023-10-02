@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
 		JSON.parse(localStorage.getItem('user')) || null
 	);
 
-	// set user to local storage
+	
 	const setUser = (user) => {
 		if (user) {
 			localStorage.setItem('user', JSON.stringify(user));
@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
         console.log(user);
 	};
 
-	// csrf token generation for guest methods
+
 	const csrfToken = async () => {
 		await axios.get('http://localhost:8000/sanctum/csrf-cookie');
 		return true;

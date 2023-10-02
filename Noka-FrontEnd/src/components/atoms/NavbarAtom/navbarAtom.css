@@ -7,7 +7,6 @@ nav{
 
 .navbar_container {
     height: 30px;
-    /* position: fixed;  */
     top: 0; 
     max-width: 100%; 
     width: 100%;
@@ -69,11 +68,8 @@ nav{
     display: flex; 
     align-items: center; 
     justify-content: space-between;
-    /* padding: 5% 5% 5% 5%; */
 }
 
-
-/* Menú desplegable */
 
 .container {
     background-color: #D9D9D9;
@@ -111,7 +107,6 @@ nav{
 
 .account_menu {
     width: 50%;
-    /* height: 40vh; */
     background-color: #5C5A5A;
     border: 2px solid #4D4D4D ;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -178,7 +173,6 @@ nav{
 }
 
 .logo_container img {
-    /* padding-top: 5%; */
     width: 50%;
     margin: 0 25%;
 }

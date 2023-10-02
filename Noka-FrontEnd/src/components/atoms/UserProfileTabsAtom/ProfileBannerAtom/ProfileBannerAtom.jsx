@@ -5,7 +5,7 @@ import jerryProfile from '../../../../assets/img/Jerry_cheese.png';
 
 function ProfileBannerAtom({user_name, user_surname}) {
 
-    const { user } = useAuth(); // Obtén la información del usuario del contexto
+    const { user } = useAuth(); 
     console.log(user);
 
     return (
