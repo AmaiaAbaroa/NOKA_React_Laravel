@@ -44,7 +44,7 @@ console.log(user);
             </div>
         </div>
         <div className="subnavbar_container">
-            <img className={`navbar_logo ${logo_position}`} src={logoLight} alt="Logo Noka" />
+            <Link to='/'><img className={`navbar_logo ${logo_position}`} src={logoLight} alt="Logo Noka" /></Link>
             <h6 className={subnavbar_subtitle ? "subnavbar_subtitle" : "subnavbar_subtitle_none"}> “ Informazioa bildu eta modu didaktiko eta <br></br> ulergarri batean azaltzea dugu helburu. ”</h6>
         </div>
       </nav>
@@ -86,7 +86,7 @@ console.log(user);
                      EGUTEGIA
                      </li>
                  </Link> 
-                 <Link className="link_decoration" to='/'>
+                 <Link className="link_decoration" to='/consultas'>
                      <li>
                      KONTSULTAK
                      </li>
@@ -107,7 +107,7 @@ console.log(user);
                 </div>
                 <ul>
                     
-                    <Link className="link_decoration" to='/'>
+                    <Link className="link_decoration" to='/profile'>
                         <li>
                         NIRE PERFILA
                         </li>

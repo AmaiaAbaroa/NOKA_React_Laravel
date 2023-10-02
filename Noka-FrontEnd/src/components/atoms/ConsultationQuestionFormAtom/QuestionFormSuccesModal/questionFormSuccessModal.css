@@ -1,0 +1,39 @@
+.consultation_form_question_succes_modal{
+    padding: 10% 5%;
+    position: absolute;
+    z-index: 100;
+    margin: 90px -87%;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border: 7px solid #93CBC2;
+    outline: 2px solid #5C5A5A;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.question_success_modal_title{
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #5C5A5A;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.question_success_modal_text{
+    font-family: 'IBM Plex Mono', monospace;
+    color: #5C5A5A;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 35px;
+}
+
+.question_succes_modal_close_button{
+    background-color: white;
+    border: none;
+    position: absolute;
+    background: white;
+    margin: -52% 0px 0px 78%;
+}
+.question_succes_modal_close_button img{
+    width: 130%
+}
